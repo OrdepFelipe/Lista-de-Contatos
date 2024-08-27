@@ -1,15 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import Contato from '../../models/Contato'
 
-type FiltroState = {
-  nome: string
-  email: string
-  numero: number
-}
+type FiltroState = Contato
 
 const initialState: FiltroState = {
   nome: '',
   email: '',
-  numero: 0
+  contato: ''
 }
 
 const FiltroSlice = createSlice({
@@ -19,7 +16,7 @@ const FiltroSlice = createSlice({
     resultFiltro: (state, action: PayloadAction<FiltroState>) => {
       state.email = action.payload.email
       state.nome = action.payload.nome
-      state.numero = action.payload.numero
+      state.contato = action.payload.contato
     }
   }
 })

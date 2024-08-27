@@ -2,16 +2,16 @@ import * as enums from '../utils/enums/Categoria'
 
 class Contato {
   nome: string
-  contato: number
+  contato: string
   email: string
-  categoria: enums.Categoria
+  categoria?: enums.Categoria
   imagem?: string
 
   constructor(
     nome: string,
-    contato: number,
+    contato: string,
     email: string,
-    categoria: enums.Categoria,
+    categoria?: enums.Categoria,
     imagem?: string
   ) {
     this.imagem = imagem

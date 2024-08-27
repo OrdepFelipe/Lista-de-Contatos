@@ -66,6 +66,20 @@ export const BtnEditar = styled.button`
   margin-right: 8px;
 `
 
+export const BtnSalvar = styled.button`
+  background-color: #57c278;
+  height: 40px;
+  width: 150px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  box-shadow: -6px 6px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  margin-right: 8px;
+`
+
 export const BtnCancelar = styled.button`
   background-color: #f16165;
   height: 40px;
