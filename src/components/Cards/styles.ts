@@ -1,17 +1,18 @@
 import styled from 'styled-components'
 import variaveis from '../../styles/variaveis'
-import { Props } from '../../containers/Main'
 
-export default function retornaCorDeFundo(props: Props) {
-  if ('categoria' in props) {
-    if (props.categoria === 'familia') return variaveis.backgroundVerde
-    if (props.categoria === 'amigo') return variaveis.backgroundVermelho
-    if (props.categoria === 'trabalho') return variaveis.backgroundAzul
-  }
+type CardHeaderProps = {
+  $categoria: string
+}
+
+function retornaCorDeFundo({ $categoria }: CardHeaderProps) {
+  if ($categoria === 'familia') return variaveis.backgroundVerde
+  if ($categoria === 'amigo') return variaveis.backgroundVermelho
+  if ($categoria === 'trabalho') return variaveis.backgroundAzul
 }
 
 export const Card = styled.div`
-  width: 250px;
+  width: 350px;
   height: 350px;
   border-radius: 10px;
   overflow: hidden;
@@ -22,8 +23,8 @@ export const Card = styled.div`
   align-self: center;
 `
 
-export const CardHeader = styled.div<Props>`
-  background-color: ${(props) => retornaCorDeFundo(props)};
+export const CardHeader = styled.div<CardHeaderProps>`
+  background-color: ${retornaCorDeFundo};
   padding: 20px;
 
   img {
@@ -49,4 +50,45 @@ export const CardBody = styled.div`
     font-size: 14px;
     color: #9a9a9a;
   }
+`
+
+export const BtnEditar = styled.button`
+  background-color: #57c278;
+  height: 40px;
+  width: 150px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  box-shadow: -6px 6px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  margin-right: 8px;
+`
+
+export const BtnSalvar = styled.button`
+  background-color: #57c278;
+  height: 40px;
+  width: 150px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  box-shadow: -6px 6px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  margin-right: 8px;
+`
+
+export const BtnCancelar = styled.button`
+  background-color: #f16165;
+  height: 40px;
+  width: 150px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  box-shadow: -6px 6px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
 `

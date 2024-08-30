@@ -5,27 +5,20 @@ import Main from '../../containers/Main'
 import { RootState } from '../../store'
 
 const Home = () => {
-  const { nome, email, numero } = useSelector(
-    (state: RootState) => state.filtro
-  )
+  const filtro = useSelector((state: RootState) => state.filtro)
 
-  const aplicarFiltro = (contato: {
-    contato: number
-    email: string
-    nome: string
-  }) => {
-    let resultFiltro = true
-    if (nome) {
-      resultFiltro = contato.nome.toLowerCase().includes(nome.toLowerCase())
-    }
-    if (email) {
-      resultFiltro = contato.email.toLowerCase().includes(email.toLowerCase())
-    }
-    if (numero) {
-      resultFiltro = contato.contato.toString().includes(numero.toString())
-    }
+  // Função para aplicar o filtro a um contato
+  const aplicarFiltro = (contato: { nome: string; email: string }) => {
+    const filtroNome = filtro.nome
+      ? contato.nome.toLowerCase().includes(filtro.nome.toLowerCase())
+      : true
 
-    return resultFiltro
+    const filtroEmail = filtro.email
+      ? contato.email.toLowerCase().includes(filtro.email.toLowerCase())
+      : true
+
+    // Retorna true se algum dos filtros forem verdadeiros
+    return filtroNome || filtroEmail
   }
 
   return (

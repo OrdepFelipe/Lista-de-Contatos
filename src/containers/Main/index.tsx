@@ -32,7 +32,7 @@ const Main = ({ filtro = () => true }: Props) => {
             email={contato.email}
             imagem={contato.imagem}
             key={contato.contato}
-            categoriaSt={'familia'}
+            categoria={contato.categoria}
           />
         ))}
       </Container>
@@ -45,7 +45,7 @@ const Main = ({ filtro = () => true }: Props) => {
             email={contato.email}
             imagem={contato.imagem}
             key={contato.contato}
-            categoriaSt={'amigo'}
+            categoria={contato.categoria}
           />
         ))}
       </Container>
@@ -58,7 +58,7 @@ const Main = ({ filtro = () => true }: Props) => {
             email={contato.email}
             imagem={contato.imagem}
             key={contato.contato}
-            categoriaSt={'trabalho'}
+            categoria={contato.categoria}
           />
         ))}
       </Container>

@@ -26,5 +26,8 @@ export const Container = styled.div<Props>`
     text-align: center;
     justify-self: center;
     align-self: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 6px dotted black;
   }
 `

@@ -14,7 +14,7 @@ const Header = () => {
       resultFiltro({
         nome: valor,
         email: valor,
-        numero: isNaN(Number(valor)) ? 0 : Number(valor)
+        contato: valor
       })
     )
   }

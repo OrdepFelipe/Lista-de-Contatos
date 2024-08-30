@@ -11,7 +11,7 @@ const Formulario = () => {
   const navigate = useNavigate()
   const [nome, setNome] = useState('')
   const [email, setEmail] = useState('')
-  const [contato, setContato] = useState<number | undefined>(undefined)
+  const [contato, setContato] = useState('')
   const [categoria, setCategoria] = useState(enums.Categoria.AMIGO)
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -34,7 +34,7 @@ const Formulario = () => {
     // Limpar os campos após o envio
     setNome('')
     setEmail('')
-    setContato(undefined)
+    setContato('')
     setCategoria(enums.Categoria.AMIGO)
   }
 
@@ -58,7 +58,7 @@ const Formulario = () => {
           type="number"
           placeholder="Número de contato"
           value={contato}
-          onChange={(e) => setContato(Number(e.target.value))}
+          onChange={(e) => setContato(e.target.value)}
         />
 
         <S.Opcoes>
