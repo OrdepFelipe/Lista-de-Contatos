@@ -4,7 +4,9 @@ import EstiloGlobal from './styles'
 import Home from './pages/Home/index'
 import Cadastro from './pages/Cadastro/index'
 import { Provider } from 'react-redux'
-import store from './store'
+import { configuraStore } from './store'
+
+const store = configuraStore()
 
 const rotas = createBrowserRouter([
   {

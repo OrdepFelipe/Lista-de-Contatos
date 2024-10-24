@@ -5,6 +5,7 @@ import { Container } from './styles'
 
 export type Props = {
   categoria: string
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   filtro?: (contato: any) => boolean
 }
 

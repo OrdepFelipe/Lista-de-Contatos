@@ -1,7 +1,7 @@
 import { BotaoNovoContato } from './styled'
 
 const BotaoACadastrar = () => (
-  <BotaoNovoContato type="submit" to="/cadastro">
+  <BotaoNovoContato data-testid="btn-cadastrar" type="submit" to="/cadastro">
     Cadastrar novo contato
   </BotaoNovoContato>
 )

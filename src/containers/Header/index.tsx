@@ -33,6 +33,7 @@ const Header = () => {
         <h1>Lista de Contatos</h1>
       </Logo>
       <HeaderInput
+        data-testid="input"
         type="text"
         placeholder="Qual contato deseja encontrar?"
         value={valorDigitado}
